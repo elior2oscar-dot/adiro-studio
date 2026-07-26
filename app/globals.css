@@ -431,6 +431,10 @@ button {
   border-top: 1px solid var(--line);
 }
 
+.process-grid-three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .process-item {
   min-height: 310px;
   padding: 30px 26px 20px;
@@ -940,7 +944,8 @@ button {
     grid-column: 2;
   }
 
-  .process-grid {
+  .process-grid,
+  .process-grid-three {
     grid-template-columns: 1fr 1fr;
   }
 

@@ -5,10 +5,10 @@ export function Problem() {
     <section className="section problem" aria-labelledby="problem-title">
       <div className="container problem-grid">
         <Reveal>
-          <p className="eyebrow">למה אתר רגיל לא מספיק</p>
+          <p className="eyebrow">למה זה חשוב</p>
           <p className="problem-note">
-            אנשים לא מחפשים רק אתר יפה. הם מחפשים מישהו שמרגיש מקצועי,
-            בטוח ושווה את הכסף — ואז הם נשארים ומזמינים.
+            אנשים מחליטים מהר. האתר צריך לגרום להם להישאר,
+            להבין — ולרצות לדבר איתכם.
           </p>
         </Reveal>
         <Reveal>

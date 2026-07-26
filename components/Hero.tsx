@@ -7,7 +7,7 @@ export function Hero() {
         <div className="reveal">
           <div className="hero-label">
             <span className="hero-label-dot" aria-hidden="true" />
-            אתר פרימיום · תהליך קצר ומדויק
+            DESIGN · SPEED · RESULT
           </div>
           <h1 className="display hero-title">
             האתר שיגרום
@@ -18,8 +18,8 @@ export function Hero() {
 
         <div className="hero-side reveal">
           <p className="hero-copy">
-            אנחנו בונים ומשדרגים אתרים שנראים יקרים, מרגישים אמינים —
-            ומביאים אנשים לדבר איתכם. מדויק, חד, ובלי למשוך את התהליך.
+            אם מישהו נכנס לאתר ולא מרגיש מיד שאתם ברמה גבוהה — הוא לא יחכה.
+            אנחנו בונים אתרים שגורמים להישאר, לסמוך — ולרצות לעבוד איתכם.
           </p>
           <a
             className="button button-primary"
@@ -33,7 +33,6 @@ export function Hero() {
             </span>
           </a>
         </div>
-        <span className="hero-signature">DESIGN × SPEED × RESULT</span>
       </div>
     </header>
   );
