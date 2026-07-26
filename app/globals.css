@@ -1,0 +1,1194 @@
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;600;700&family=Heebo:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --ink: #152033;
+  --ink-soft: #5b677a;
+  --noir: #0d1b2a;
+  --noir-soft: #1b2d44;
+  --bone: #f5f7fa;
+  --bone-deep: #e8edf3;
+  --copper: #c9a45c;
+  --copper-light: #ead39f;
+  --line: rgba(21, 32, 51, 0.12);
+  --white-line: rgba(245, 247, 250, 0.16);
+  --max: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--noir);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bone);
+  font-family: "Heebo", Arial, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  content: "";
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+.container {
+  width: min(calc(100% - 48px), var(--max));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0 0 24px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 28px;
+  height: 1px;
+  content: "";
+  background: currentColor;
+}
+
+.eyebrow.light {
+  color: var(--copper-light);
+}
+
+.display {
+  margin: 0;
+  font-family: "Frank Ruhl Libre", "Heebo", serif;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+.section {
+  padding: 128px 0;
+}
+
+.section-title {
+  max-width: 850px;
+  font-size: clamp(2.65rem, 6vw, 5.8rem);
+}
+
+.button {
+  display: inline-flex;
+  min-height: 54px;
+  padding: 0 26px;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 220ms ease, background 220ms ease, color 220ms ease,
+    border-color 220ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: var(--noir);
+  background: var(--copper-light);
+}
+
+.button-primary:hover {
+  background: #f3dfb1;
+}
+
+.button-dark {
+  color: var(--bone);
+  background: var(--noir);
+}
+
+.button-dark:hover {
+  background: var(--noir-soft);
+}
+
+.button-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform 220ms ease;
+}
+
+.button:hover .button-icon {
+  transform: translateX(-4px);
+}
+
+/* Navigation */
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  color: var(--bone);
+}
+
+.nav-inner {
+  display: flex;
+  height: 94px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--white-line);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-logo-mark {
+  flex-shrink: 0;
+}
+
+.brand-logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1;
+}
+
+.brand-logo-name {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 1.28rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.brand-logo-studio {
+  font-family: "Heebo", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.nav-link {
+  color: rgba(245, 247, 250, 0.72);
+  transition: color 180ms ease;
+}
+
+.nav-link:hover {
+  color: var(--bone);
+}
+
+.nav-cta {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 0 20px;
+  align-items: center;
+  border: 1px solid var(--white-line);
+  border-radius: 100px;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.nav-cta:hover {
+  border-color: rgba(234, 211, 159, 0.62);
+  background: rgba(245, 247, 250, 0.08);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 820px;
+  color: var(--bone);
+  background:
+    radial-gradient(circle at 14% 20%, rgba(201, 164, 92, 0.2), transparent 28%),
+    radial-gradient(circle at 82% 70%, rgba(234, 211, 159, 0.1), transparent 36%),
+    linear-gradient(155deg, #102238 0%, var(--noir) 45%, #0a1522 100%);
+  overflow: hidden;
+}
+
+.hero::after {
+  position: absolute;
+  inset: auto -10% -50% auto;
+  width: 800px;
+  height: 800px;
+  border: 1px solid rgba(234, 211, 159, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 120px rgba(201, 164, 92, 0.035),
+    0 0 0 240px rgba(201, 164, 92, 0.02);
+  content: "";
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.55fr);
+  gap: 70px;
+  align-items: end;
+  padding-top: 190px;
+  padding-bottom: 92px;
+}
+
+.hero-label {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 36px;
+  color: var(--copper-light);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.hero-label-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--copper);
+  box-shadow: 0 0 0 6px rgba(201, 164, 92, 0.16);
+}
+
+.hero-title {
+  max-width: 940px;
+  font-size: clamp(4rem, 8.7vw, 8.2rem);
+}
+
+.hero-title .accent {
+  color: var(--copper-light);
+}
+
+.hero-side {
+  padding-bottom: 10px;
+}
+
+.hero-copy {
+  max-width: 390px;
+  margin: 0 0 32px;
+  color: rgba(245, 247, 250, 0.72);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.hero-signature {
+  position: absolute;
+  left: 0;
+  bottom: 38px;
+  color: rgba(245, 247, 250, 0.38);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  writing-mode: vertical-rl;
+}
+
+/* Problem */
+.problem {
+  background: var(--bone);
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 80px;
+}
+
+.problem-copy {
+  max-width: 780px;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: clamp(1.5rem, 3vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.45;
+}
+
+.problem-copy strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.problem-note {
+  align-self: end;
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Services */
+.services {
+  color: var(--bone);
+  background: var(--noir);
+}
+
+.services-head {
+  display: flex;
+  margin-bottom: 84px;
+  gap: 50px;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.services-head p {
+  max-width: 360px;
+  margin: 0 0 8px;
+  color: rgba(245, 247, 250, 0.62);
+  line-height: 1.8;
+}
+
+.services-list {
+  border-top: 1px solid var(--white-line);
+}
+
+.service-row {
+  display: grid;
+  min-height: 180px;
+  padding: 32px 0;
+  grid-template-columns: 0.25fr 0.8fr 1fr;
+  gap: 40px;
+  align-items: center;
+  border-bottom: 1px solid var(--white-line);
+  transition: padding 250ms ease, background 250ms ease;
+}
+
+.service-row:hover {
+  padding-inline: 22px;
+  background: rgba(245, 247, 250, 0.035);
+}
+
+.service-number {
+  color: var(--copper);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+}
+
+.service-title {
+  margin: 0;
+  font-family: "Frank Ruhl Libre", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.7rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.service-text {
+  max-width: 460px;
+  margin: 0;
+  color: rgba(245, 247, 250, 0.62);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* Process */
+.process {
+  background: var(--bone-deep);
+}
+
+.process-top {
+  margin-bottom: 78px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.process-item {
+  min-height: 310px;
+  padding: 30px 26px 20px;
+  border-inline-end: 1px solid var(--line);
+}
+
+.process-item:last-child {
+  border-inline-end: 0;
+}
+
+.process-number {
+  display: block;
+  margin-bottom: 82px;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+}
+
+.process-title {
+  margin: 0 0 16px;
+  font-family: "Frank Ruhl Libre", sans-serif;
+  font-size: 1.55rem;
+  letter-spacing: -0.035em;
+}
+
+.process-text {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+/* Audiences */
+.audiences {
+  position: relative;
+  color: var(--bone);
+  background: #0a1522;
+  overflow: hidden;
+}
+
+.audiences::before {
+  position: absolute;
+  top: -250px;
+  left: -200px;
+  width: 650px;
+  height: 650px;
+  border: 1px solid rgba(201, 164, 92, 0.14);
+  border-radius: 50%;
+  content: "";
+}
+
+.audiences-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.audiences-head {
+  display: flex;
+  margin-bottom: 72px;
+  gap: 50px;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.audiences-head p {
+  max-width: 340px;
+  margin: 0 0 8px;
+  color: rgba(245, 247, 250, 0.62);
+  line-height: 1.8;
+}
+
+.audience-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--white-line);
+}
+
+.audience-item {
+  min-height: 220px;
+  padding: 36px 34px 34px 0;
+  border-bottom: 1px solid var(--white-line);
+  border-inline-end: 1px solid var(--white-line);
+}
+
+.audience-item:nth-child(2n) {
+  padding-inline-start: 34px;
+  padding-inline-end: 0;
+  border-inline-end: 0;
+}
+
+.audience-title {
+  margin: 0 0 16px;
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.audience-text {
+  max-width: 420px;
+  margin: 0;
+  color: rgba(245, 247, 250, 0.62);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+/* About */
+.about {
+  background: var(--bone);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.about-mark {
+  position: relative;
+  display: grid;
+  width: min(100%, 520px);
+  aspect-ratio: 4 / 5;
+  place-items: center;
+  color: var(--bone);
+  background:
+    radial-gradient(circle at 20% 18%, rgba(201, 164, 92, 0.22), transparent 34%),
+    linear-gradient(160deg, #13253a 0%, var(--noir) 55%, #0a1522 100%);
+  overflow: hidden;
+}
+
+.about-mark::before {
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(234, 211, 159, 0.22);
+  content: "";
+  pointer-events: none;
+}
+
+.about-mark-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  max-width: 78%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-mark-symbol {
+  margin-bottom: 22px;
+}
+
+.about-mark-name {
+  margin: 0;
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: clamp(2.8rem, 7vw, 4.4rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+.about-mark-studio {
+  margin: 10px 0 0;
+  color: var(--copper-light);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+}
+
+.about-mark-line {
+  display: block;
+  width: 56px;
+  height: 1px;
+  margin: 26px 0;
+  background: var(--copper);
+}
+
+.about-mark-role {
+  margin: 0;
+  color: rgba(245, 247, 250, 0.68);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.about-copy .section-title {
+  font-size: clamp(2.6rem, 5vw, 4.9rem);
+}
+
+.about-body {
+  max-width: 570px;
+  margin: 34px 0;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.about-values {
+  display: flex;
+  padding-top: 22px;
+  gap: 26px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+/* FAQ */
+.faq {
+  background: var(--bone-deep);
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 100px;
+}
+
+.faq-sticky {
+  align-self: start;
+}
+
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-question {
+  display: flex;
+  width: 100%;
+  padding: 27px 0;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: right;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question::marker {
+  content: "";
+}
+
+.faq-plus {
+  width: 28px;
+  color: var(--ink-soft);
+  font-size: 1.45rem;
+  font-weight: 300;
+  transition: transform 220ms ease;
+}
+
+.faq-item[open] .faq-plus {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-width: 640px;
+  margin: -5px 0 0;
+  padding: 0 0 28px;
+  padding-inline-end: 42px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+/* Final CTA */
+.final-cta {
+  position: relative;
+  padding: 150px 0;
+  color: var(--bone);
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 120%, rgba(201, 164, 92, 0.2), transparent 35%),
+    var(--noir);
+  overflow: hidden;
+}
+
+.final-cta::before {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: min(85vw, 900px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(201, 164, 92, 0.12);
+  border-radius: 50%;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.final-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.final-title {
+  max-width: 950px;
+  margin: 0 auto 28px;
+  font-size: clamp(3.4rem, 8vw, 7.8rem);
+}
+
+.final-copy {
+  max-width: 540px;
+  margin: 0 auto 38px;
+  color: rgba(245, 247, 250, 0.68);
+  font-size: 1.08rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* Footer & floating WhatsApp */
+.footer {
+  color: var(--bone);
+  background: #08111c;
+}
+
+.footer-inner {
+  display: flex;
+  min-height: 130px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(245, 247, 250, 0.1);
+}
+
+.footer-meta {
+  display: flex;
+  gap: 26px;
+  color: rgba(245, 247, 250, 0.45);
+  font-size: 0.78rem;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 20;
+  display: flex;
+  width: 58px;
+  height: 58px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #fff;
+  background: #1f8f55;
+  box-shadow: 0 12px 32px rgba(10, 36, 23, 0.28);
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.whatsapp-float:hover {
+  background: #167e49;
+  transform: translateY(-3px) scale(1.03);
+}
+
+.whatsapp-float svg {
+  width: 27px;
+  height: 27px;
+  fill: currentColor;
+}
+
+:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 4px;
+}
+
+/* Motion */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero .reveal {
+  animation: hero-in 850ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.hero .hero-side.reveal {
+  animation-delay: 180ms;
+}
+
+@keyframes hero-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Large tablets and small laptops */
+@media (max-width: 1280px) {
+  .section {
+    padding: 112px 0;
+  }
+
+  .hero {
+    min-height: 740px;
+  }
+
+  .hero-inner {
+    gap: 52px;
+    padding-top: 170px;
+    padding-bottom: 84px;
+  }
+
+  .hero-signature {
+    display: none;
+  }
+
+  .services-head {
+    margin-bottom: 68px;
+  }
+
+  .service-row {
+    min-height: 158px;
+    grid-template-columns: 0.2fr 0.85fr 1fr;
+    gap: 28px;
+  }
+
+  .process-item {
+    padding-inline: 20px;
+  }
+
+  .process-number {
+    margin-bottom: 62px;
+  }
+
+  .about-grid {
+    gap: 64px;
+  }
+
+  .faq-layout {
+    gap: 64px;
+  }
+
+  .final-cta {
+    padding: 128px 0;
+  }
+}
+
+/* Tablets in landscape */
+@media (max-width: 1080px) {
+  .section {
+    padding: 96px 0;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-inner {
+    min-height: 700px;
+    grid-template-columns: 1fr;
+    gap: 42px;
+    align-content: end;
+    padding-top: 165px;
+    padding-bottom: 70px;
+  }
+
+  .hero-title {
+    max-width: 720px;
+    font-size: clamp(3.6rem, 9vw, 6.6rem);
+  }
+
+  .hero-copy {
+    max-width: 560px;
+  }
+
+  .hero-signature {
+    display: none;
+  }
+
+  .problem-grid,
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .problem-note {
+    max-width: 380px;
+  }
+
+  .services-head {
+    display: block;
+  }
+
+  .services-head p {
+    margin-top: 30px;
+  }
+
+  .service-row {
+    grid-template-columns: 0.2fr 0.8fr;
+  }
+
+  .service-text {
+    grid-column: 2;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .process-item {
+    min-height: 264px;
+    padding-inline: 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .process-item:nth-child(2n) {
+    padding-inline-end: 0;
+    border-inline-end: 0;
+  }
+
+  .process-item:nth-child(2n + 1) {
+    padding-inline-start: 0;
+  }
+
+  .process-number {
+    margin-bottom: 52px;
+  }
+
+  .about-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 48px;
+  }
+
+  .about-body {
+    margin: 26px 0;
+    font-size: 1rem;
+  }
+}
+
+/* Tablets in portrait */
+@media (max-width: 820px) {
+  .hero-inner {
+    min-height: 620px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .about-mark {
+    width: min(100%, 400px);
+  }
+
+  .audiences-head {
+    display: block;
+  }
+
+  .audiences-head p {
+    margin-top: 28px;
+  }
+
+  .audience-list {
+    grid-template-columns: 1fr;
+  }
+
+  .audience-item,
+  .audience-item:nth-child(2n) {
+    min-height: 0;
+    padding: 28px 0;
+    border-inline-end: 0;
+  }
+
+  .final-cta {
+    padding: 116px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(calc(100% - 32px), var(--max));
+  }
+
+  .section {
+    padding: 78px 0;
+  }
+
+  .nav-inner {
+    height: 76px;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  .hero-inner {
+    min-height: 580px;
+    padding-top: 136px;
+    padding-bottom: 56px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.5rem, 17vw, 5.2rem);
+  }
+
+  .hero-label {
+    margin-bottom: 26px;
+  }
+
+  .problem-copy {
+    font-size: 1.55rem;
+  }
+
+  .services-head {
+    margin-bottom: 54px;
+  }
+
+  .service-row {
+    min-height: 0;
+    grid-template-columns: 46px 1fr;
+    gap: 18px;
+  }
+
+  .service-text {
+    grid-column: 1 / -1;
+    padding-right: 64px;
+  }
+
+  .service-row:hover {
+    padding-inline: 0;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-item {
+    min-height: 0;
+    padding: 28px 0 32px;
+    border-inline-end: 0;
+  }
+
+  .process-number {
+    margin-bottom: 40px;
+  }
+
+  .audiences-head {
+    margin-bottom: 48px;
+  }
+
+  .audience-list {
+    margin-top: 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .about-mark {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 5 / 4;
+    max-height: none;
+  }
+
+  .about-values {
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
+
+  .faq-answer {
+    padding-inline-end: 0;
+  }
+
+  .final-cta {
+    padding: 105px 0;
+  }
+
+  .footer-inner {
+    padding: 34px 0;
+    gap: 25px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-meta {
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+  }
+}
+
+/* Phones and small tablets held sideways */
+@media (max-height: 620px) and (orientation: landscape) {
+  .nav-inner {
+    height: 72px;
+  }
+
+  .hero-inner {
+    min-height: 0;
+    gap: 22px;
+    padding-top: 104px;
+    padding-bottom: 44px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+  }
+
+  .hero-label {
+    margin-bottom: 16px;
+  }
+
+  .hero-copy {
+    margin-bottom: 22px;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  /* Keeps the floating button clear of the hero call to action */
+  .whatsapp-float {
+    right: auto;
+    left: 18px;
+    bottom: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
