@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: site.brand,
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png?v=3",
         width: 1200,
         height: 1200,
         alt: "Adiro Studio",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: site.title,
     description: site.description,
-    images: ["/og-image.png"],
+    images: ["/og-image.png?v=3"],
   },
   robots: {
     index: true,
