@@ -5,19 +5,34 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
-        <a className="logo" href="#top" aria-label="חזרה לראש הדף">
-          <Logo />
+        <a
+          className="footer-brand"
+          href="#top"
+          aria-label={`${site.brand} — דף הבית`}
+        >
+          <Logo showStudio idSuffix="footer" />
         </a>
-        <div className="footer-meta">
+
+        <p className="footer-copy">
+          © {new Date().getFullYear()} {site.brand}. נבנה בדיוק.
+        </p>
+
+        <div className="footer-contact">
           <a
+            className="footer-whatsapp"
             href={site.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
+            WhatsApp
+          </a>
+          <a
+            className="footer-phone"
+            href={`tel:${site.phoneTel}`}
+            aria-label={`חיוג אל ${site.phoneDisplay}`}
+          >
             {site.phoneDisplay}
           </a>
-          <span>{site.founders}</span>
-          <span>© {new Date().getFullYear()} {site.brand}</span>
         </div>
       </div>
     </footer>

@@ -6,17 +6,23 @@ export function Nav() {
     <nav className="nav" aria-label="ניווט ראשי">
       <div className="container nav-inner">
         <a className="logo" href="#top" aria-label={`${site.brand} — דף הבית`}>
-          <Logo />
+          <Logo bold idSuffix="nav" />
         </a>
         <div className="nav-links">
+          <a className="nav-link" href="#works">
+            פרויקטים
+          </a>
+          <a className="nav-link" href="#capabilities">
+            יכולות
+          </a>
           <a className="nav-link" href="#services">
-            מה אנחנו עושים
+            שירותים
           </a>
           <a className="nav-link" href="#process">
-            איך זה עובד
+            תהליך
           </a>
           <a className="nav-link" href="#about">
-            מי אנחנו
+            הסטודיו
           </a>
           <a
             className="nav-cta"
@@ -24,7 +30,7 @@ export function Nav() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            הזמינו אתר
+            התחלת פרויקט
           </a>
         </div>
       </div>
