@@ -1,13 +1,40 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 
 export function WhatsAppButton() {
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    const footer = document.querySelector(".footer");
+    const finalCta = document.querySelector(".final-cta");
+    if (!footer) return;
+
+    const targets = [footer, finalCta].filter(Boolean) as Element[];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const anyVisible = entries.some(
+          (entry) => entry.isIntersecting && entry.intersectionRatio > 0.12,
+        );
+        setHidden(anyVisible);
+      },
+      { threshold: [0, 0.12, 0.25], rootMargin: "0px 0px -8% 0px" },
+    );
+
+    targets.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <a
-      className="whatsapp-float"
+      className={`whatsapp-float${hidden ? " is-hidden" : ""}`}
       href={site.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`דברו איתנו ב־WhatsApp: ${site.phoneDisplay}`}
+      aria-hidden={hidden}
+      tabIndex={hidden ? -1 : 0}
     >
       <span className="whatsapp-pulse" aria-hidden="true" />
       <span className="whatsapp-pulse whatsapp-pulse-delay" aria-hidden="true" />

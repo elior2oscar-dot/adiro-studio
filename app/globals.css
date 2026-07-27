@@ -924,21 +924,23 @@ img {
 }
 
 .metric-card {
-  padding: 28px 24px;
+  padding: 32px 28px;
 }
 
 .metric-value {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
   font-weight: 800;
   letter-spacing: -0.04em;
+  line-height: 1.1;
 }
 
 .metric-label {
-  margin: 10px 0 0;
+  margin: 14px 0 0;
   color: var(--ink-soft);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 /* Works bento */
@@ -978,6 +980,12 @@ img {
   gap: 18px;
 }
 
+.work-card-calm {
+  min-height: 300px;
+  padding: 26px;
+  gap: 22px;
+}
+
 .work-preview {
   position: relative;
   flex: 0 0 120px;
@@ -988,6 +996,11 @@ img {
     radial-gradient(circle at 30% 20%, rgba(142, 182, 255, 0.28), transparent 40%),
     linear-gradient(145deg, #141824, #0a0c12);
   transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.work-card-calm .work-preview {
+  flex-basis: 108px;
+  height: 108px;
 }
 
 .work-card:hover .work-preview {
@@ -1021,61 +1034,52 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 22px;
 }
 
-.cap-mock-scan {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(142, 182, 255, 0.08) 48%,
-    transparent 52%
-  );
-  animation: float-soft 4.5s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.cap-mock-code {
-  position: relative;
-  z-index: 1;
+.cap-mock-lines {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  width: 100%;
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  letter-spacing: 0.02em;
-  color: rgba(168, 198, 255, 0.72);
-  direction: ltr;
-  text-align: left;
+  gap: 10px;
+  width: 72%;
 }
 
-.cap-mock-code .glow {
-  color: #b8d4ff;
-  text-shadow: 0 0 12px rgba(142, 182, 255, 0.85);
+.cap-mock-lines span {
+  display: block;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(199, 215, 255, 0.28);
+}
+
+.cap-mock-lines span:nth-child(1) {
+  width: 78%;
+}
+
+.cap-mock-lines span:nth-child(2),
+.cap-mock-lines span.accent {
+  width: 56%;
+  background: linear-gradient(90deg, rgba(142, 182, 255, 0.75), rgba(142, 182, 255, 0.15));
+  box-shadow: 0 0 12px rgba(142, 182, 255, 0.35);
+}
+
+.cap-mock-lines span:nth-child(3) {
+  width: 64%;
 }
 
 .cap-mock-ui {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 10px;
-  width: 100%;
-  height: 100%;
+  width: 78%;
 }
 
 .cap-mock-frame {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(142, 182, 255, 0.22);
-  background: rgba(8, 12, 22, 0.72);
-  box-shadow: inset 0 0 18px rgba(110, 168, 255, 0.12);
+  gap: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(142, 182, 255, 0.2);
+  background: rgba(8, 12, 22, 0.65);
 }
 
 .cap-mock-frame b,
@@ -1083,41 +1087,26 @@ img {
   display: block;
   height: 6px;
   border-radius: 999px;
-  background: rgba(199, 215, 255, 0.35);
+  background: rgba(199, 215, 255, 0.32);
 }
 
 .cap-mock-frame b {
-  width: 36%;
+  width: 34%;
   background: linear-gradient(90deg, #8eb6ff, transparent);
-  box-shadow: 0 0 10px rgba(142, 182, 255, 0.45);
 }
 
-.cap-mock-frame em.short {
-  width: 48%;
+.cap-mock-frame em {
+  width: 70%;
 }
 
 .cap-mock-frame i {
   display: block;
-  width: 42%;
-  height: 16px;
-  margin-top: auto;
+  width: 38%;
+  height: 14px;
+  margin-top: 4px;
   border-radius: 999px;
   background: linear-gradient(135deg, #ffffff, #6ea8ff);
-  box-shadow: 0 0 14px rgba(110, 168, 255, 0.55);
-}
-
-.cap-mock-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.cap-mock-stack span {
-  flex: 1;
-  border-radius: 8px;
-  border: 1px solid rgba(142, 182, 255, 0.18);
-  background: linear-gradient(180deg, rgba(142, 182, 255, 0.22), rgba(255, 255, 255, 0.03));
-  box-shadow: 0 0 12px rgba(110, 168, 255, 0.2);
+  box-shadow: 0 0 12px rgba(110, 168, 255, 0.4);
 }
 
 .cap-mock-cloud {
@@ -1126,71 +1115,56 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 18px;
+  width: 100%;
+}
+
+.cap-mock-node {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(142, 182, 255, 0.4);
+  background: rgba(110, 168, 255, 0.2);
+}
+
+.cap-mock-node.mid {
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, #c7d7ff, #6ea8ff);
+  box-shadow: 0 0 18px rgba(142, 182, 255, 0.55);
+}
+
+.cap-mock-orb-only {
+  display: grid;
+  place-items: center;
   width: 100%;
   height: 100%;
 }
 
-.cap-mock-node {
-  width: 18px;
-  height: 18px;
+.cap-mock-orb-only span {
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  border: 1px solid rgba(142, 182, 255, 0.45);
-  background: rgba(110, 168, 255, 0.25);
-  box-shadow: 0 0 14px rgba(142, 182, 255, 0.45);
+  background: radial-gradient(circle, rgba(199, 215, 255, 0.55), rgba(110, 168, 255, 0.08) 62%, transparent 72%);
+  box-shadow: 0 0 28px rgba(142, 182, 255, 0.35);
 }
 
-.cap-mock-node.mid {
-  width: 28px;
-  height: 28px;
-  background: radial-gradient(circle, #c7d7ff, #6ea8ff);
-  box-shadow: 0 0 22px rgba(142, 182, 255, 0.7);
-}
-
-.cap-mock-pulse {
-  position: absolute;
-  width: 70%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #8eb6ff, transparent);
-  box-shadow: 0 0 12px rgba(142, 182, 255, 0.8);
-}
-
-.cap-mock-speed {
-  position: relative;
-  z-index: 1;
+.work-body {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  min-height: 132px;
   gap: 2px;
 }
 
-.cap-mock-ring {
-  position: absolute;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  border: 2px solid rgba(142, 182, 255, 0.25);
-  border-top-color: #9ec5ff;
-  box-shadow: 0 0 18px rgba(142, 182, 255, 0.35);
-  animation: mark-breathe 4.8s ease-in-out infinite;
+.work-card-calm .work-body {
+  min-height: 0;
+  gap: 6px;
 }
 
-.cap-mock-speed strong {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #e8efff;
-  text-shadow: 0 0 16px rgba(142, 182, 255, 0.7);
-}
-
-.cap-mock-speed em {
-  font-family: var(--font-display);
-  font-size: 0.62rem;
-  font-style: normal;
-  letter-spacing: 0.18em;
-  color: rgba(168, 198, 255, 0.8);
-  text-transform: uppercase;
+.work-card-calm .work-desc {
+  margin-top: 8px;
+  line-height: 1.7;
 }
 
 .bento > *:nth-child(1) .work-preview-orb {
@@ -1225,13 +1199,6 @@ img {
 
 .work-card:hover .work-preview-orb {
   transform: translate(-8px, -10px) scale(1.12);
-}
-
-.work-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 132px;
 }
 
 .work-category {
@@ -2456,6 +2423,7 @@ img {
 
 .testimonials-marquee {
   overflow: hidden;
+  direction: ltr;
   mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
 }
 
@@ -2485,31 +2453,48 @@ img {
   border-radius: var(--radius);
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
   backdrop-filter: blur(14px);
+  direction: rtl;
+  unicode-bidi: isolate;
+  text-align: right;
 }
 
 .testimonial-card blockquote {
   margin: 0;
   color: var(--ink);
   font-size: 1.02rem;
-  line-height: 1.7;
+  line-height: 1.75;
   font-weight: 400;
+  font-family: var(--font-body);
+  unicode-bidi: isolate;
+}
+
+.testimonial-quote {
+  display: inline;
+  unicode-bidi: isolate;
 }
 
 .testimonial-card figcaption {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 4px;
   margin-top: 18px;
+  text-align: right;
+  unicode-bidi: isolate;
 }
 
 .testimonial-card strong {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 
 .testimonial-card span {
   color: var(--ink-soft);
+  font-family: var(--font-body);
   font-size: 0.85rem;
+  letter-spacing: 0;
 }
 
 /* Final CTA */
@@ -2564,7 +2549,7 @@ img {
 .footer {
   position: relative;
   z-index: 1;
-  padding: 28px 0 40px;
+  padding: 36px 0 calc(40px + env(safe-area-inset-bottom));
   border-top: 1px solid var(--line);
   color: var(--ink-soft);
   font-size: 0.9rem;
@@ -2651,8 +2636,8 @@ img {
 .whatsapp-float {
   position: fixed;
   z-index: 50;
-  left: 22px;
-  bottom: 22px;
+  left: max(22px, env(safe-area-inset-left));
+  bottom: max(22px, env(safe-area-inset-bottom));
   display: inline-flex;
   width: 68px;
   height: 68px;
@@ -2661,6 +2646,17 @@ img {
   border-radius: 50%;
   color: #fff;
   isolation: isolate;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+}
+
+.whatsapp-float.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.92);
 }
 
 .whatsapp-float-inner {
@@ -3046,6 +3042,10 @@ img {
 
   .faq-cta .button {
     width: 100%;
+  }
+
+  .final-cta {
+    padding-bottom: 96px;
   }
 
   .footer-inner {

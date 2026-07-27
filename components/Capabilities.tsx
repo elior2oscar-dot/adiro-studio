@@ -5,12 +5,11 @@ import { Reveal } from "./Reveal";
 function CapabilityMock({ id }: { id: string }) {
   return (
     <div className={`cap-mock cap-mock-${id}`} aria-hidden="true">
-      <div className="cap-mock-scan" />
-      {id === "01" ? (
-        <div className="cap-mock-code">
-          <span>const site = create()</span>
-          <span className="glow">await build.deploy()</span>
-          <span>metrics.ready = true</span>
+      {id === "01" || id === "06" ? (
+        <div className="cap-mock-lines">
+          <span />
+          <span className="accent" />
+          <span />
         </div>
       ) : null}
       {id === "02" ? (
@@ -18,13 +17,7 @@ function CapabilityMock({ id }: { id: string }) {
           <div className="cap-mock-frame">
             <b />
             <em />
-            <em className="short" />
             <i />
-          </div>
-          <div className="cap-mock-stack">
-            <span />
-            <span />
-            <span />
           </div>
         </div>
       ) : null}
@@ -33,28 +26,11 @@ function CapabilityMock({ id }: { id: string }) {
           <div className="cap-mock-node" />
           <div className="cap-mock-node mid" />
           <div className="cap-mock-node" />
-          <div className="cap-mock-pulse" />
         </div>
       ) : null}
-      {id === "04" ? (
-        <div className="cap-mock-speed">
-          <div className="cap-mock-ring" />
-          <strong>98</strong>
-          <em>perf</em>
-        </div>
-      ) : null}
-      {id === "05" ? (
-        <div className="cap-mock-speed">
-          <div className="cap-mock-ring" />
-          <strong>0.4</strong>
-          <em>sec</em>
-        </div>
-      ) : null}
-      {id === "06" ? (
-        <div className="cap-mock-code">
-          <span>system.online</span>
-          <span className="glow">signal.stable</span>
-          <span>uptime: 99.9%</span>
+      {id === "04" || id === "05" ? (
+        <div className="cap-mock-orb-only">
+          <span />
         </div>
       ) : null}
     </div>
@@ -86,7 +62,7 @@ export function Capabilities() {
         <div className="bento">
           {capabilities.map((item) => (
             <Reveal key={item.id} className="bento-cell">
-              <GlassCard className="work-card">
+              <GlassCard className="work-card work-card-calm">
                 <div className="work-preview" aria-hidden="true">
                   <div className="work-preview-grid" />
                   <CapabilityMock id={item.id} />

@@ -12,12 +12,19 @@ export function Testimonials() {
         </h2>
       </div>
 
-      <div className="testimonials-marquee" dir="ltr">
+      <div className="testimonials-marquee">
         <div className="testimonials-track">
           <div className="testimonials-group">
             {testimonials.map((item) => (
-              <figure className="testimonial-card" key={`a-${item.name}`}>
-                <blockquote>“{item.quote}”</blockquote>
+              <figure
+                className="testimonial-card"
+                dir="rtl"
+                lang="he"
+                key={`a-${item.name}`}
+              >
+                <blockquote>
+                  <span className="testimonial-quote">{item.quote}</span>
+                </blockquote>
                 <figcaption>
                   <strong>{item.name}</strong>
                   <span>{item.role}</span>
@@ -27,8 +34,15 @@ export function Testimonials() {
           </div>
           <div className="testimonials-group" aria-hidden="true">
             {testimonials.map((item) => (
-              <figure className="testimonial-card" key={`b-${item.name}`}>
-                <blockquote>“{item.quote}”</blockquote>
+              <figure
+                className="testimonial-card"
+                dir="rtl"
+                lang="he"
+                key={`b-${item.name}`}
+              >
+                <blockquote>
+                  <span className="testimonial-quote">{item.quote}</span>
+                </blockquote>
                 <figcaption>
                   <strong>{item.name}</strong>
                   <span>{item.role}</span>
