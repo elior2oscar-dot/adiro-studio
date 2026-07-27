@@ -62,10 +62,7 @@ function ProjectMock({ theme }: { theme: string }) {
               <em />
               <strong />
               <strong className="short" />
-              <div className="pm-code-lines">
-                <span>tokens.define()</span>
-                <span className="glow">components.sync()</span>
-              </div>
+              <s />
             </div>
             <div className="project-mock-visual project-mock-visual-filled">
               <div className="pm-studio-grid">

@@ -2,7 +2,7 @@ import { techStack } from "@/lib/site";
 
 export function TechStack() {
   return (
-    <section className="tech" aria-label="כלים ויכולות טכניות" dir="ltr">
+    <section className="tech" aria-label="יכולות מרכזיות" dir="rtl">
       <div className="tech-fade tech-fade-start" aria-hidden="true" />
       <div className="tech-fade tech-fade-end" aria-hidden="true" />
       <div className="tech-viewport">

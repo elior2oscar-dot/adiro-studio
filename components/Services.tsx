@@ -11,13 +11,11 @@ function ServiceMock({ variant }: { variant: (typeof mockVariants)[number] }) {
         <span />
         <span />
         <span />
-        <i />
       </div>
 
       {variant === "build" ? (
         <div className="service-mock-body">
           <div className="service-mock-sidebar">
-            <b />
             <b />
             <b className="active" />
             <b />
@@ -27,11 +25,6 @@ function ServiceMock({ variant }: { variant: (typeof mockVariants)[number] }) {
               <em />
               <em className="mid" />
               <em className="short" />
-            </div>
-            <div className="service-mock-code">
-              <span>&lt;Hero /&gt;</span>
-              <span>layout.grid()</span>
-              <span className="glow">deploy.live()</span>
             </div>
             <div className="service-mock-bars">
               <i />
@@ -45,11 +38,10 @@ function ServiceMock({ variant }: { variant: (typeof mockVariants)[number] }) {
       {variant === "upgrade" ? (
         <div className="service-mock-body service-mock-body-upgrade">
           <div className="service-mock-chart">
-            <span style={{ height: "38%" }} />
-            <span style={{ height: "58%" }} />
-            <span style={{ height: "46%" }} />
+            <span style={{ height: "42%" }} />
+            <span style={{ height: "62%" }} />
+            <span style={{ height: "50%" }} />
             <span style={{ height: "78%" }} />
-            <span style={{ height: "92%" }} />
           </div>
           <div className="service-mock-panel">
             <div className="service-mock-kpi">
@@ -60,7 +52,6 @@ function ServiceMock({ variant }: { variant: (typeof mockVariants)[number] }) {
               <em />
               <b className="accent" />
             </div>
-            <div className="service-mock-wave" />
           </div>
         </div>
       ) : null}
@@ -75,12 +66,6 @@ function ServiceMock({ variant }: { variant: (typeof mockVariants)[number] }) {
           <div className="service-mock-cta-row">
             <span />
             <strong>WhatsApp</strong>
-          </div>
-          <div className="service-mock-dots">
-            <b />
-            <b />
-            <b />
-            <b />
           </div>
         </div>
       ) : null}

@@ -6,7 +6,7 @@ import { GlassCard } from "./GlassCard";
 import { Reveal } from "./Reveal";
 
 export function Faq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section className="section" id="faq" aria-labelledby="faq-title">

@@ -69,15 +69,15 @@ export const capabilities = [
 ] as const;
 
 export const techStack = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Tailwind",
-  "Figma",
-  "UI/UX",
-  "WebGL",
-  "SEO",
-  "Lighthouse",
+  "עיצוב מדויק",
+  "פיתוח מהיר",
+  "ממשק נקי",
+  "ביצועים גבוהים",
+  "מיקוד בהמרות",
+  "מובייל תחילה",
+  "השקה יציבה",
+  "ליווי אישי",
+  "נוכחות פרימיום",
 ] as const;
 
 export const works = [
