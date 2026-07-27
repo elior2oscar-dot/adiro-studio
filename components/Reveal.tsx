@@ -15,6 +15,11 @@ export function Reveal({
     const element = ref.current;
     if (!element) return;
 
+    if (window.matchMedia("(max-width: 820px)").matches) {
+      element.classList.add("visible");
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,7 +27,7 @@ export function Reveal({
           observer.unobserve(element);
         }
       },
-      { threshold: 0.14 },
+      { threshold: 0.08, rootMargin: "0px 0px -8% 0px" },
     );
 
     observer.observe(element);

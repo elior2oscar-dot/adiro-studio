@@ -14,7 +14,7 @@ export function Hero() {
       </div>
 
       <div className="container hero-inner">
-        <div className="hero-copy-block reveal">
+        <div className="hero-copy-block">
           <div className="hero-label">
             <span className="hero-label-dot" aria-hidden="true" />
             עיצוב · פיתוח · המרה
@@ -58,8 +58,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hero-visual-wrap reveal">
-          <TiltCard className="hero-tilt" intensity={20}>
+        <div className="hero-visual-wrap">
+          <TiltCard className="hero-tilt" intensity={10}>
             <HeroVisual />
           </TiltCard>
         </div>
