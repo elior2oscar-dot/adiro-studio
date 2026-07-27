@@ -2,8 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { site } from "@/lib/site";
 import "./globals.css";
 
+const siteUrl = "https://elior2oscar-dot.github.io/adiro-studio";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adirostudio.co.il"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: site.title,
     template: `%s | ${site.brand}`,
@@ -21,9 +23,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "he_IL",
+    url: siteUrl,
     title: site.title,
     description: site.description,
     siteName: site.brand,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Adiro Studio",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,

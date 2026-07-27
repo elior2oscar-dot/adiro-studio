@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 import path from "path";
 
 const repoName = "adiro-studio";
-const isGithubPages = process.env.GITHUB_ACTIONS === "true";
+const isGithubPages =
+  process.env.GITHUB_ACTIONS === "true" ||
+  process.env.DEPLOY_TARGET === "gh-pages";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
