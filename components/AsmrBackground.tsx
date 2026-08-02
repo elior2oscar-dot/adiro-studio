@@ -45,9 +45,9 @@ export function AsmrBackground() {
 
     const particleCount = () => {
       const area = window.innerWidth * window.innerHeight;
-      if (window.innerWidth < 768) return Math.min(320, Math.floor(area / 4200));
-      if (window.innerWidth < 1200) return Math.min(650, Math.floor(area / 2800));
-      return Math.min(900, Math.floor(area / 2200));
+      if (window.innerWidth < 768) return Math.min(420, Math.floor(area / 3200));
+      if (window.innerWidth < 1200) return Math.min(780, Math.floor(area / 2200));
+      return Math.min(1100, Math.floor(area / 1800));
     };
 
     const createParticle = (): Particle => {
@@ -58,8 +58,8 @@ export function AsmrBackground() {
         size: Math.random() * 1.5 + 0.45,
         vx: (Math.random() - 0.5) * 0.18,
         vy: (Math.random() - 0.5) * 0.18,
-        color: isGlass ? "168, 198, 255" : "72, 78, 92",
-        alpha: Math.random() * 0.35 + 0.08,
+        color: isGlass ? "198, 215, 255" : "96, 102, 118",
+        alpha: Math.random() * 0.45 + 0.14,
         rotation: Math.random() * Math.PI * 2,
         rotationSpeed: (Math.random() - 0.5) * 0.04,
         frictionGlow: 0,
@@ -138,7 +138,7 @@ export function AsmrBackground() {
     };
 
     const render = () => {
-      ctx.fillStyle = "rgba(7, 8, 12, 0.2)";
+      ctx.fillStyle = "rgba(7, 8, 12, 0.14)";
       ctx.fillRect(0, 0, width, height);
 
       for (const p of particles) {
