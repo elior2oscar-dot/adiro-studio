@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * Active ASMR particle background for Adiro Studio.
+ * Original 21st.dev demo is archived at: backups/AsmrBackground.original.tsx
+ */
+
 import { useEffect, useRef } from "react";
 
 type Particle = {
