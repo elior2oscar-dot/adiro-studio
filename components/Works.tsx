@@ -263,9 +263,6 @@ function ProjectMock({ theme }: { theme: string }) {
           </>
         ) : null}
       </div>
-      {theme === "dashboard" ? (
-        <span className="project-mock-badge">Case Study</span>
-      ) : null}
     </div>
   );
 }
@@ -276,16 +273,15 @@ export function Works() {
       <div className="container">
         <Reveal className="works-head">
           <div>
-            <p className="eyebrow">פרויקטים נבחרים</p>
+            <p className="eyebrow">עבודות מהסטודיו</p>
             <h2 className="display section-title" id="works-title">
-              פרויקטים שפועלים
+              אתרים שבנינו
               <br />
-              <span className="gradient-text">ברמה אחרת.</span>
+              <span className="gradient-text">לעסקים אמיתיים.</span>
             </h2>
           </div>
           <p className="section-lead">
-            כיווני עיצוב ופיתוח לעסקים שרוצים להיראות מקצועיים — ולקבל יותר
-            פניות.
+            פרויקטים חיים שפותחו כאן — אפשר להיכנס ולראות את התוצאה בפועל.
           </p>
         </Reveal>
 
@@ -310,14 +306,9 @@ export function Works() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Live Demo
+                      לצפייה באתר
                       <span aria-hidden="true">↗</span>
                     </a>
-                  ) : null}
-                  {work.action === "case-study" ? (
-                    <span className="project-action project-action--study">
-                      Case Study
-                    </span>
                   ) : null}
                 </div>
               </TiltCard>
