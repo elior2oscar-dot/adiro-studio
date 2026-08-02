@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { AsmrBackground } from "@/components/AsmrBackground";
 import { Capabilities } from "@/components/Capabilities";
 import { CursorSpotlight } from "@/components/CursorSpotlight";
 import { Faq } from "@/components/Faq";
@@ -18,6 +19,7 @@ import { Works } from "@/components/Works";
 export default function Home() {
   return (
     <>
+      <AsmrBackground />
       <CursorSpotlight />
       <Nav />
       <main>
