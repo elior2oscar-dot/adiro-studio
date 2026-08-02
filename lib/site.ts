@@ -46,7 +46,7 @@ export const capabilities = [
     id: "03",
     title: "פריסה יציבה",
     category: "ענן ותשתית",
-    description: "העלאה מסודרת, זמינות גבוהה ואתר שעובד גם כשהמחשב כבוי.",
+    description: "העלאה מסודרת, זמינות גבוהה ותשתית יציבה שמחזיקה את האתר באוויר.",
   },
   {
     id: "04",
@@ -83,31 +83,25 @@ export const techStack = [
 export const works = [
   {
     id: "01",
-    title: "אתר יוקרה לנדל״ן",
-    category: "מותג · פיתוח",
-    description: "נוכחות פרימיום עם גלריה חיה ומסלול פנייה ברור.",
-    theme: "estate",
+    title: "Qweet Vape",
+    category: "חנות אונליין · דף נחיתה",
+    description:
+      "אתר ומערכת מכירה למותג ווייפ — קטלוג ברור, חוויית רכישה חלקה ומסר שמוכר מהמבט הראשון.",
+    theme: "ecommerce",
+    href: "https://qweetvape.github.io",
+    action: "live" as const,
+    tags: ["E-commerce", "Landing Page", "UI/UX", "Responsive"],
   },
   {
     id: "02",
-    title: "שדרוג לקליניקה",
-    category: "עיצוב ממשק",
-    description: "מסר חד, טעינה מהירה והזמנה ישירה ב־WhatsApp.",
-    theme: "clinic",
-  },
-  {
-    id: "03",
-    title: "השקת סטודיו",
-    category: "מערכת עיצוב",
-    description: "שפה מינימליסטית מדויקת עם קומפוננטות אחידות.",
-    theme: "studio",
-  },
-  {
-    id: "04",
-    title: "דף שירות ממיר",
-    category: "המרות",
-    description: "מבנה שמקטין חיכוך ומגדיל פניות בלי רעש מיותר.",
-    theme: "funnel",
+    title: "אפליקציית לקוח דינמית",
+    category: "Full-stack · אפליקציית ווב",
+    description:
+      "מערכת ווב מלאה ללקוח עסקי: לוח בקרה חי, ניהול נתונים בזמן אמת, הרשאות משתמשים וממשק מדויק לתפעול יומיומי.",
+    theme: "dashboard",
+    href: "https://improvement-chapters-believed-toronto.trycloudflare.com",
+    action: "live" as const,
+    tags: ["Full-stack", "Dashboard", "Auth", "API"],
   },
 ] as const;
 
