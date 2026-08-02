@@ -1250,6 +1250,9 @@ img {
   line-height: 1.75;
   font-weight: 300;
   opacity: 1;
+  direction: rtl;
+  unicode-bidi: isolate;
+  text-align: start;
 }
 
 .work-card:hover .work-desc {
